@@ -1,7 +1,7 @@
 
 
 const rank_up_limit = 40000;
-const three_months_total_sales_limit = 3
+const three_months_total_sales_limit = 4
 
 window.onload = function() {
 
@@ -46,4 +46,4 @@ function BadAction() {
 
 function CloseWindow() {
     window.close();
-  }
+}
