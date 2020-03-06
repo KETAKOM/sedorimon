@@ -1,0 +1,13 @@
+{
+    "name": "Alerter",
+    "version": "1.0.3",
+    "manifest_version": 2,
+    "description": "Alert tool",
+    "content_scripts": [{
+      "matches": ["https://mnrate.com/item/aid/*"],
+      "js": [
+        "jquery.min.js",
+        "alert.js"
+      ]
+    }]
+  }
