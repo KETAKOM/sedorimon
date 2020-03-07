@@ -3,6 +3,10 @@
     "version": "1.0.3",
     "manifest_version": 2,
     "description": "Alert tool",
+    "permissions": [
+      "https://script.google.com/*",
+      "https://script.googleusercontent.com/*"
+    ],
     "content_scripts": [{
       "matches": ["https://mnrate.com/item/aid/*"],
       "js": [
