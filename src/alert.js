@@ -30,11 +30,11 @@ window.onload = function() {
 
 
 function Logic () {
-    // ランキングでのチェック
-    var rank = $(".data_ranking").text();
-    if (rank >= rank_up_limit) {
-        return false;
-    }
+    // // ランキングでのチェック
+    // var rank = $(".data_ranking").text();
+    // if (rank >= rank_up_limit) {
+    //     return false;
+    // }
 
     // 中古販売数でのチェック
     var tr = $(".table-bordered tbody").children('tr');
