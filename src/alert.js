@@ -70,6 +70,12 @@ function Save() {
         jan: "",
         standard_num: "",
         rank: "",
+        used_lowest_price: "",// 中古品の最安値
+        used_lowest_price_get: "",// 中古品の最安値で利益が出る金額
+        lowest_price_near_new: "",// 中古品でほぼ新品状態の最安値
+        lowest_price_near_new_get: "", // 中古品でほぼ新品状態の利益が出る値
+        quantity: "",// 出品者数
+        used_sales: "", //3ヶ月間の販売数
     }
 
     var amazon_detail = $(".product_data_summary_box").prev("div").children("h3").children("a");
@@ -81,6 +87,17 @@ function Save() {
     obj.jan = $("#export_ean_code_wrap").children(".clip_bd").text();
     obj.standard_num = $("#export_ean_code_wrap").parent().next("span").children(".clip_bd").text();
     obj.rank = $(".data_ranking").text();
+
+    var used = $(".used_data.base");
+    obj.used_lowest_price = used.children(".price.used_price_color").text();
+    obj.used_lowest_price_get = used.children(".used_price_color.item_conditions_data_box").children(".prime_price").children(".self_ship").text();
+
+    var sub_used_price = $(".sub_condition_price_row.base.oc_row.mint.active");
+    obj.lowest_price_near_new = sub_used_price.children(".price.sub_condition_price_color._btn_size_style.item_conditions_data_box").text();
+    obj.lowest_price_near_new_get = $(".self_ship").data('nyukin-price');
+
+    obj.quantity = $(".quantity.used_price_color._btn_size_style.item_conditions_data_box").data('total-count');
+    obj.used_sales = $(".sales_data.used.used_price_color.item_conditions_data_box").children(".sales").text();
 
     post2GAS(obj);
 }
@@ -94,6 +111,12 @@ function post2GAS(obj){
         jan: obj.jan,
         standard_num: obj.standard_num,
         rank: obj.rank,
+        used_lowest_price: obj.used_lowest_price,
+        used_lowest_price_get: obj. used_lowest_price_get,
+        lowest_price_near_new: obj.lowest_price_near_new,
+        lowest_price_near_new_get: obj.lowest_price_near_new_get,
+        quantity: obj.quantity,
+        used_sales: obj.used_sales,
     }
 
     console.log(data);
