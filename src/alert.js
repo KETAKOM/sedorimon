@@ -99,6 +99,7 @@ function Save() {
     obj.quantity = $(".quantity.used_price_color._btn_size_style.item_conditions_data_box").data('total-count');
     obj.used_sales = $(".sales_data.used.used_price_color.item_conditions_data_box").children(".sales").text();
 
+    console.log(obj);
     post2GAS(obj);
 }
 
